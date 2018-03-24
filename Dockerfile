@@ -42,7 +42,7 @@ RUN rm vsimrti-bin-17.0.zip
 RUN apt-get install -y software-properties-common
 RUN apt-add-repository -y ppa:webupd8team/java
 RUN apt-get update
-RUN echo yes | apt-get install -y oracle-java8-installer
+# RUN echo yes | apt-get install -y oracle-java8-installer
 RUN add-apt-repository -y ppa:sumo/stable
 RUN apt-get update
 RUN apt-get install -y --allow-unauthenticated sumo sumo-tools sumo-doc
