@@ -48,7 +48,7 @@ RUN apt-get update
 RUN apt-get install -y --allow-unauthenticated sumo sumo-tools sumo-doc
 RUN apt-get install -y git
 VOLUME /home/vsimrti
-RUN apt-get update --fix-missing
+# RUN apt-get update --fix-missing
 RUN apt-get install -y gedit
 
 # tini for subreap
