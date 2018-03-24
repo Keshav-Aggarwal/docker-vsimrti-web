@@ -29,6 +29,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # VSimRTI additional packages
+RUN add-apt-repository -y ppa:sumo/stable
+RUN apt-add-repository -y ppa:webupd8team/java
 RUN apt-get update \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
         wget \
@@ -40,11 +42,7 @@ RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrt
 RUN unzip vsimrti-bin-17.0.zip -d /home
 RUN rm vsimrti-bin-17.0.zip
 RUN apt-get install -y software-properties-common
-RUN apt-add-repository -y ppa:webupd8team/java
-RUN apt-get update
 # RUN echo yes | apt-get install -y oracle-java8-installer
-RUN add-apt-repository -y ppa:sumo/stable
-RUN apt-get update
 RUN apt-get install -y --allow-unauthenticated sumo sumo-tools sumo-doc
 RUN apt-get install -y git
 VOLUME /home/vsimrti
