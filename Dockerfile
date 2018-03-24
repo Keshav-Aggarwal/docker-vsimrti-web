@@ -29,9 +29,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # VSimRTI additional packages
-RUN apt-get install -y wget
-RUN apt-get install -y unzip
-RUN apt-get install -y nano
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends --allow-unauthenticated \
+        wget \
+        unzip \
+        nano
 RUN mkdir /home/vsimrti
 RUN chown 1000:1000 -R /home/vsimrti
 RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrti-bin-17.0.zip
