@@ -31,7 +31,6 @@ RUN apt-get update \
 #    && rm -rf /var/lib/apt/lists/*
 
 # VSimRTI additional packages
-RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 RUN mkdir /home/vsimrti
 RUN chown 1000:1000 -R /home/vsimrti
 RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrti-bin-17.0.zip
