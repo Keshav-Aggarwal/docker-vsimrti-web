@@ -6,8 +6,8 @@ RUN sed -i 's#http://archive.ubuntu.com/#http://tw.archive.ubuntu.com/#' /etc/ap
 # built-in packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends software-properties-common curl dialog \
-#    && sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list" \
-#    && curl -SL http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key | apt-key add - \
+    && sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list" \
+    && curl -SL http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key | apt-key add - \
     && add-apt-repository ppa:fcwu-tw/ppa \
     && add-apt-repository -y ppa:sumo/stable \
     && apt-add-repository -y ppa:webupd8team/java \
@@ -19,14 +19,13 @@ RUN apt-get update \
         lxde x11vnc xvfb \
         gtk2-engines-murrine ttf-ubuntu-font-family \
         firefox \
-        fonts-wqy-microhei \
         nginx \
         python-pip python-dev build-essential \
         mesa-utils libgl1-mesa-dri \
         gnome-themes-standard gtk2-engines-pixbuf gtk2-engines-murrine pinta arc-theme \
         dbus-x11 x11-utils \
         wget unzip nano git gedit \
-        sumo sumo-tools sumo-doc 
+        sumo sumo-tools sumo-doc
 #    && apt-get autoclean \
 #    && apt-get autoremove \
 #    && rm -rf /var/lib/apt/lists/*
