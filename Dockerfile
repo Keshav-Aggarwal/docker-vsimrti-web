@@ -34,9 +34,9 @@ ARG TINI_VERSION=v0.9.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /bin/tini
 RUN chmod +x /bin/tini
 
-ADD image/usr/lib/web/requirements.txt /tmp/
-RUN pip install setuptools wheel && pip install -r /tmp/requirements.txt
-ADD image /
+# ADD image/usr/lib/web/requirements.txt /tmp/
+# RUN pip install setuptools wheel && pip install -r /tmp/requirements.txt
+# ADD image /
 
 EXPOSE 80
 WORKDIR /root
