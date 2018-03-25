@@ -30,8 +30,12 @@ RUN apt-get update \
 #    && apt-get autoremove \
 #    && rm -rf /var/lib/apt/lists/*
 
+# JDK 8 Install
+RUN apt-get install -y python-software-properties debconf-utils
+RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+RUN apt-get install -y oracle-java8-installer
+
 # VSimRTI additional packages
-RUN echo yes | apt-get install -y oracle-java8-installer
 RUN mkdir /home/vsimrti
 RUN chown 1000:1000 -R /home/vsimrti
 RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrti-bin-17.0.zip
