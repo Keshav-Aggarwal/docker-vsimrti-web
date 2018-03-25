@@ -3,7 +3,7 @@ LABEL maintainer="steven@telecomsteve.com"
 
 RUN sed -i 's#http://archive.ubuntu.com/#http://tw.archive.ubuntu.com/#' /etc/apt/sources.list
 
-# built-in packages
+# base install packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends software-properties-common \
     && add-apt-repository ppa:fcwu-tw/ppa \
@@ -12,26 +12,17 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
         supervisor \
-        sudo vim-tiny \
-        net-tools \
-        lxde x11vnc xvfb \
-        firefox \
-        nginx \
-        python-pip python-dev build-essential \
-        mesa-utils libgl1-mesa-dri \
-        dbus-x11 x11-utils \
+        sudo vim-tiny net-tools lxde x11vnc xvfb python-software-properties debconf-utils \
+        firefox nginx python-pip python-dev build-essential \
+        mesa-utils libgl1-mesa-dri dbus-x11 x11-utils \
         dialog wget unzip nano git gedit \
         sumo sumo-tools sumo-doc
-#    && apt-get autoclean \
-#    && apt-get autoremove \
-#    && rm -rf /var/lib/apt/lists/*
 
-# JDK 8 Install
-RUN apt-get install -y python-software-properties debconf-utils
+# jdk 8 install
 RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
 RUN apt-get install -y oracle-java8-installer
 
-# VSimRTI additional packages
+# vsimrti additional packages
 RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrti-bin-17.0.zip
 RUN unzip vsimrti-bin-17.0.zip -d /root/Desktop
 RUN rm vsimrti-bin-17.0.zip
