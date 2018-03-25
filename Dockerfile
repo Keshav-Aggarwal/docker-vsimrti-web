@@ -15,7 +15,7 @@ RUN apt-get update \
         sudo vim-tiny net-tools lxde x11vnc xvfb python-software-properties debconf-utils \
         firefox nginx python-pip python-dev build-essential \
         mesa-utils libgl1-mesa-dri dbus-x11 x11-utils \
-        dialog wget unzip nano git gedit \
+        dialog wget unzip nano git \
         sumo sumo-tools sumo-doc
 
 # jdk 8 install
@@ -34,9 +34,9 @@ ARG TINI_VERSION=v0.9.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /bin/tini
 RUN chmod +x /bin/tini
 
-# ADD image/usr/lib/web/requirements.txt /tmp/
-# RUN pip install setuptools wheel && pip install -r /tmp/requirements.txt
-# ADD image /
+ADD image/usr/lib/web/requirements.txt /tmp/
+RUN pip install setuptools wheel && pip install -r /tmp/requirements.txt
+ADD image /
 
 EXPOSE 80
 WORKDIR /root
