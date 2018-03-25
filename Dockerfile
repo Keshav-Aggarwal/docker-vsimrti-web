@@ -6,8 +6,6 @@ RUN sed -i 's#http://archive.ubuntu.com/#http://tw.archive.ubuntu.com/#' /etc/ap
 # built-in packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends software-properties-common \
-#    && sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list" \
-#    && curl -SL http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key | apt-key add - \
     && add-apt-repository ppa:fcwu-tw/ppa \
     && add-apt-repository -y ppa:sumo/stable \
     && apt-add-repository -y ppa:webupd8team/java \
@@ -17,12 +15,10 @@ RUN apt-get update \
         sudo vim-tiny \
         net-tools \
         lxde x11vnc xvfb \
-#        gtk2-engines-murrine ttf-ubuntu-font-family \
         firefox \
         nginx \
         python-pip python-dev build-essential \
         mesa-utils libgl1-mesa-dri \
-#        gnome-themes-standard gtk2-engines-pixbuf gtk2-engines-murrine pinta arc-theme \
         dbus-x11 x11-utils \
         dialog wget unzip nano git gedit \
         sumo sumo-tools sumo-doc
@@ -36,13 +32,11 @@ RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true
 RUN apt-get install -y oracle-java8-installer
 
 # VSimRTI additional packages
-# RUN mkdir /home/vsimrti
-# RUN chown 1000:1000 -R /home/vsimrti
 RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrti-bin-17.0.zip
 RUN unzip vsimrti-bin-17.0.zip -d /root/Desktop
 RUN rm vsimrti-bin-17.0.zip
-# VOLUME /home/vsimrti
-# RUN apt-get update --fix-missing
+RUN chmod +x /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
+RUN bash /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
 
 # tini for subreap
 ARG TINI_VERSION=v0.9.0
