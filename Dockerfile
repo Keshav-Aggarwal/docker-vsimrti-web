@@ -39,8 +39,9 @@ RUN pip install setuptools wheel && pip install -r /tmp/requirements.txt
 ADD image /
 
 # desktop customization
+ADD /desktop/panel /tmp/
 RUN rm /etc/xdg/lxpanel/default/panels/panel
-ADD /desktop/panel /etc/xdg/lxpanel/default/panels/
+RUN mv /tmp/panel /etc/xdg/lxpanel/default/panels/panel
 
 EXPOSE 80
 WORKDIR /root
