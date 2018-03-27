@@ -16,8 +16,8 @@ Global {
     setpartialstrut=1  # ask the window manager to reserve the space for the panel and not to cover it with maximized windows
     usefontcolor=1   # use customize colors for the text instead of that defined in system theme.
     fontcolor=#ffffff   # color of text on the panel (Currently this is only supported by clock applet)
-    background=0    # use customize image to draw the background of the panel. (cannot be used with transparent)
-    backgroundfile=/usr/share/lxpanel/images/background.png  # The image file used.
+    background=1    # use customize image to draw the background of the panel. (cannot be used with transparent)
+    backgroundfile=/tmp/slate.png  # The image file used.
 }
 
 
