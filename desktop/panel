@@ -7,7 +7,7 @@ Global {
 	margin=0
 	widthtype=percent
 	width=100
-	height=32
+	height=26
 	transparent=0
 	tintcolor=#000000
 	alpha=0
@@ -17,7 +17,7 @@ Global {
 	fontcolor=#ffffff
 	usefontsize=0
 	fontsize=10
-	background=1
+	background=0
 	backgroundfile=/tmp/slate.png
 }
 
@@ -31,7 +31,7 @@ Plugin {
 Plugin {
 	type = menu
 	Config {
-    	image=/tmp/ubuntu.png
+    	image=/usr/share/lxpanel/images/my-computer.png
     	system {
     	}
     	separator {
