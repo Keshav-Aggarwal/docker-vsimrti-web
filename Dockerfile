@@ -38,6 +38,10 @@ ADD image/usr/lib/web/requirements.txt /tmp/
 RUN pip install setuptools wheel && pip install -r /tmp/requirements.txt
 ADD image /
 
+# desktop customization
+RUN rm /etc/xdg/lxpanel/default/panels/panel
+ADD /desktop/panel /etc/xdg/lxpanel/default/panels/
+
 EXPOSE 80
 WORKDIR /root
 ENV HOME=/home/ubuntu \
