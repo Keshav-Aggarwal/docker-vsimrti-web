@@ -41,7 +41,9 @@ ADD image /
 # desktop customization
 ADD /desktop/panel /tmp/
 RUN rm /etc/xdg/lxpanel/default/panels/panel
-RUN mv /tmp/panel /etc/xdg/lxpanel/default/panels/panel
+RUN rm /etc/xdg/lxpanel/LXDE/panels/panel
+RUN cp /tmp/panel /etc/xdg/lxpanel/default/panels/panel
+RUN cp /tmp/panel /etc/xdg/lxpanel/LXDE/panels/panel 
 
 EXPOSE 80
 WORKDIR /root
