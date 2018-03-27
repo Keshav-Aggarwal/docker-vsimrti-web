@@ -8,7 +8,7 @@ Global {
     margin=0       # margin: margin to the edge of the whole screen
     widthtype=percent   # percent/pixel
     width=100      # width of the panel: The unit used here is according to widthtype.
-    height=26      # height of the panel
+    height=32      # height of the panel
     transparent=0  # use (pseudo-)transparent background: on=1, off=0
     tintcolor=#000000  # color blended with the backgroud when transparency is used.
     alpha=0    # alpha value used to blend tintcolor with background.
