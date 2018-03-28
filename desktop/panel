@@ -21,6 +21,7 @@ Global {
 	backgroundfile=/tmp/slate.png
 }
 
+
 Plugin {
 	type = space
 	Config {
