@@ -2,6 +2,7 @@ docker-vsimrti-web
 =========================
 
 Docker image to provide HTML5 VNC interface to access Ubuntu 16.04 LXDE desktop environment.
+Additionally, this image provides Java, Git, SUMO and VSimRTI simulator files for running V2X network simulations.
 
 Quick Start
 -------------------------
@@ -13,6 +14,8 @@ docker run -it --rm -p 6080:80 telecomsteve/vsimrti-web
 ```
 
 Browse http://127.0.0.1:6080/
+
+(VSimRTI simulator files are placed in a folder on the desktop.)
 
 <img src="https://raw.github.com/fcwu/docker-ubuntu-vnc-desktop/master/screenshots/lxde.png?v1" width=700/>
 
