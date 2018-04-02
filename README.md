@@ -17,7 +17,7 @@ Browse http://127.0.0.1:6080/
 
 (VSimRTI simulator files are placed in a folder on the desktop.)
 
-<img src="https://raw.github.com/stevenplatt/docker-vsimrti-web/master/screenshots/vsimrti-web.jpg?v1" width=700/>
+![screenshot](https://raw.github.com/stevenplatt/docker-vsimrti-web/master/screenshots/vsimrti-web.jpg?v1)
 
 
 Connect with VNC Viewer and protect by VNC Password
