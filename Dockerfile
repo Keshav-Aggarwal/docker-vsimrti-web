@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-LABEL maintainer="steven@telecomsteve.com"
+LABEL maintainer="TelecomSteve"
 
 RUN sed -i 's#http://archive.ubuntu.com/#http://tw.archive.ubuntu.com/#' /etc/apt/sources.list
 
@@ -28,6 +28,12 @@ RUN unzip vsimrti-bin-17.0.zip -d /root/Desktop
 RUN rm vsimrti-bin-17.0.zip
 RUN chmod +x /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
 RUN bash /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
+
+# Omnet++ additional packages
+RUN apt-get install -y build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
+&& apt-get install -y doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev \
+&& apt-get install -y autoconf automake \
+&& apt-get install -y libtool libproj-dev libgdal1-dev libfox-1.6-dev libgdal-dev libxerces-c-dev qt4-dev-tools \
 
 # tini for subreap
 ARG TINI_VERSION=v0.9.0
