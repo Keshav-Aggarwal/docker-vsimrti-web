@@ -27,7 +27,7 @@ RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrt
 RUN unzip vsimrti-bin-17.0.zip -d /root/Desktop
 RUN rm vsimrti-bin-17.0.zip
 RUN chmod +x /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
-RUN bash ./root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
+RUN /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
 
 # Omnet++ additional packages
 RUN apt-get install -y build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
