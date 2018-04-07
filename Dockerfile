@@ -33,7 +33,9 @@ RUN bash /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
 RUN apt-get install -y build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
 && apt-get install -y doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev \
 && apt-get install -y autoconf automake \
-&& apt-get install -y libtool libproj-dev libgdal1-dev libfox-1.6-dev libgdal-dev libxerces-c-dev qt4-dev-tools \
+&& apt-get install -y libtool libproj-dev libfox-1.6-dev libgdal-dev libxerces-c-dev qt4-dev-tools \
+
+# libgdal1-dev
 
 # tini for subreap
 ARG TINI_VERSION=v0.9.0
