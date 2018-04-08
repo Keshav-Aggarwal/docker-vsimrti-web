@@ -23,12 +23,15 @@ RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true
 RUN apt-get install -y oracle-java8-installer
 
 # vsimrti additional packages
-RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrti-bin-17.0.zip
-RUN unzip vsimrti-bin-17.0.zip -d /root/Desktop
-RUN rm vsimrti-bin-17.0.zip
-RUN chmod +x /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
-RUN /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
-RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git /root/Desktop
+# RUN wget https://www.dcaiti.tu-berlin.de/research/simulation/download/get/vsimrti-bin-17.0.zip
+# RUN unzip vsimrti-bin-17.0.zip -d /root/Desktop
+# RUN rm vsimrti-bin-17.0.zip
+# RUN chmod +x /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
+# RUN /root/Desktop/vsimrti-allinone/vsimrti/firstStart.sh
+RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git
+RUN mv vsimrti-scenarios/vsimrti /root/Desktop/
+RUN chmod +x /root/Desktop/vsimrti/firstStart.sh
+RUN /root/Desktop/vsimrti/firstStart.sh
 
 # Omnet++ additional packages
 RUN apt-get install -y build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
