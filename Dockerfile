@@ -31,8 +31,9 @@ RUN apt-get install -y gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zl
 && apt-get install -y libgdal-dev libxerces-c-dev qt4-dev-tools libgdal1-dev libwebkitgtk-1.0-0
 
 # vsimrti additional packages
-RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git /root/upf/ 
-RUN wget https://datastore-nyc3-01.nyc3.digitaloceanspaces.com/omnetpp-4.6-src.tgz /root/upf/vsimrti-scenarios/vsimrti/bin/fed/omnetpp/
+RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git /root/upf/
+RUN wget https://datastore-nyc3-01.nyc3.digitaloceanspaces.com/omnetpp-4.6-src.tgz
+# RUN mv omnetpp-4.6-src.tgz /root/upf/vsimrti-scenarios/vsimrti/bin/fed/omnetpp/omnetpp-4.6-src.tgz
 
 
 # tini for subreap
