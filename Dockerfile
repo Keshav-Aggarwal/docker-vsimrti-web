@@ -35,7 +35,7 @@ RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git \
     && mv vsimrti-scenarios/vsimrti /root/Desktop/vsimrti
 
 RUN wget https://datastore-nyc3-01.nyc3.digitaloceanspaces.com/omnetpp-4.6-src.tgz \
-    && mv omnetpp-4.6-src.tgz /root/Desktop/vsimrti/bin/fed/omnetpp
+    && mv /omnetpp-4.6-src.tgz /root/Desktop/vsimrti/bin/fed/omnetpp
 
 # tini for subreap
 ARG TINI_VERSION=v0.9.0
