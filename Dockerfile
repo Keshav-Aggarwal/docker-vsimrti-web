@@ -25,17 +25,17 @@ RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true
 RUN apt-get install -y oracle-java8-installer
 
 # Omnet++ additional packages
-RUN apt-get install -y build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
+RUN apt-get install -y gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
 && apt-get install -y doxygen graphviz openmpi-bin libopenmpi-dev libpcap-dev \
 && apt-get install -y autoconf automake libtool libproj-dev libfox-1.6-dev \
 && apt-get install -y libgdal-dev libxerces-c-dev qt4-dev-tools libgdal1-dev libwebkitgtk-1.0-0
 
 # vsimrti additional packages
 RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git \
-    && mv /vsimrti-scenarios/vsimrti /root/Desktop/vsimrti
+    && mv ./vsimrti-scenarios/vsimrti /root/Desktop/vsimrti
 
 RUN wget https://datastore-nyc3-01.nyc3.digitaloceanspaces.com/omnetpp-4.6-src.tgz \
-    && mv /omnetpp-4.6-src.tgz /root/Desktop/vsimrti/bin/fed/omnetpp
+    && mv ./omnetpp-4.6-src.tgz /root/Desktop/vsimrti/bin/fed/omnetpp
 
 # tini for subreap
 ARG TINI_VERSION=v0.9.0
