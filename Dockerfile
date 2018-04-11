@@ -15,7 +15,7 @@ RUN apt-get update \
         sudo vim-tiny net-tools lxde x11vnc xvfb python-software-properties debconf-utils \
         firefox nginx python-pip python-dev build-essential \
         mesa-utils libgl1-mesa-dri dbus-x11 x11-utils \
-        dialog wget unzip nano git libprotobuf-dev gcc g++ bison flex lbzip2 libxml2-dev rsync
+        dialog wget unzip nano git libprotobuf-dev gcc g++ bison flex lbzip2 libxml2-dev rsync libsqlite3-dev patch
 
 #SUMO installation
 RUN apt-get install -y sumo sumo-tools sumo-doc
