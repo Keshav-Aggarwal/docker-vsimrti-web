@@ -34,7 +34,7 @@ RUN apt-get install -y gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zl
 RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git /root/Desktop/upf/
 
 # NS3 install
-RUN yes "y" | bash /root/Desktop/upf/vsimrti/bin/fed/ns3/ns3_installer.sh
+# RUN yes "y" | bash /root/Desktop/upf/vsimrti/bin/fed/ns3/ns3_installer.sh
 
 # tini for subreap
 ARG TINI_VERSION=v0.9.0
