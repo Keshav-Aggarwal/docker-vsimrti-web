@@ -15,7 +15,7 @@ RUN apt-get update \
         sudo vim-tiny net-tools lxde x11vnc xvfb python-software-properties debconf-utils \
         firefox nginx python-pip python-dev build-essential \
         mesa-utils libgl1-mesa-dri dbus-x11 x11-utils \
-        dialog wget unzip nano git libprotobuf-dev gcc g++ bison flex lbzip2 libxml2-dev rsync libsqlite3-dev patch
+        dialog wget unzip nano git libprotobuf-dev rsync libsqlite3-dev patch lbzip2
 
 #SUMO installation
 RUN apt-get install -y sumo sumo-tools sumo-doc
@@ -23,6 +23,12 @@ RUN apt-get install -y sumo sumo-tools sumo-doc
 # jdk 8 install
 RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
 RUN apt-get install -y oracle-java8-installer
+
+# Omnet++ additional packages
+RUN apt-get install -y gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
+&& apt-get install -y doxygen graphviz openmpi-bin libopenmpi-dev libpcap-dev \
+&& apt-get install -y autoconf automake libtool libproj-dev libfox-1.6-dev \
+&& apt-get install -y libgdal-dev libxerces-c-dev qt4-dev-tools libgdal1-dev libwebkitgtk-1.0-0
 
 # vsimrti additional packages
 RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git /root/Desktop/upf/
