@@ -25,16 +25,16 @@ RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true
 RUN apt-get install -y oracle-java8-installer
 
 # Omnet++ additional packages
-RUN apt-get install -y gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
-&& apt-get install -y doxygen graphviz openmpi-bin libopenmpi-dev libpcap-dev \
-&& apt-get install -y autoconf automake libtool libproj-dev libfox-1.6-dev \
-&& apt-get install -y libgdal-dev libxerces-c-dev qt4-dev-tools libgdal1-dev libwebkitgtk-1.0-0
+# RUN apt-get install -y gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev \
+# && apt-get install -y doxygen graphviz openmpi-bin libopenmpi-dev libpcap-dev \
+# && apt-get install -y autoconf automake libtool libproj-dev libfox-1.6-dev \
+# && apt-get install -y libgdal-dev libxerces-c-dev qt4-dev-tools libgdal1-dev libwebkitgtk-1.0-0
 
 # vsimrti additional packages
 RUN git clone https://github.com/stevenplatt/vsimrti-scenarios.git /root/Desktop/upf/
 
 # NS3 install
- RUN yes "y" | bash /root/Desktop/upf/vsimrti/bin/fed/ns3/ns3_installer.sh
+# RUN yes "y" | bash /root/Desktop/upf/vsimrti/bin/fed/ns3/ns3_installer.sh
 
 # tini for subreap
 ARG TINI_VERSION=v0.9.0
